@@ -1,7 +1,7 @@
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using PCP.Application.Entities.RegisterCourseByTeacher.Commands.RegisterCourse;
+using PCP.Application.Entities.Course.Commands.RegisterCourse;
 
 namespace WebApi.Controllers;
 [Route("api/[controller]")]

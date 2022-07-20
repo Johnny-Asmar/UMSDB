@@ -1,7 +1,7 @@
 using System.Text.Json;
 using System.Text.Json.Serialization;
 
-namespace PCP.Application.Entities.AddCourseByAdmin.Commands.DateConverter;
+namespace PCP.Application.Entities.Course.Commands.DateConverter;
 
 public class DateOnlyConverter: JsonConverter<DateOnly>
 {
