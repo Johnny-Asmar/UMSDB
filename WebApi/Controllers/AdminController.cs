@@ -4,7 +4,7 @@ using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using NpgsqlTypes;
-using PCP.Application.Entities.AddCourseByAdmin.Commands.AddCourse;
+using PCP.Application.Entities.Course.Commands.CreateCourse;
 using PCP.Application.ViewModel;
 
 namespace WebApi.Controllers;

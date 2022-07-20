@@ -14,7 +14,13 @@ public class AddUserHandler : IRequestHandler<AddUserCommand, List<Domain.Models
 
     public async Task<List<Domain.Models.User>> Handle(AddUserCommand request, CancellationToken cancellationToken)
     {
-        _umsContext.Users.AddAsync(request.user);
+        Domain.Models.User user = new Domain.Models.User();
+        user.Name = request.Name;
+        user.RoleId = request.RoleId;
+        user.KeycloakId = request.KeyClockId;
+        user.Email = request.Email;
+        user.SubsribeToEmail = request.SubscribeToEmail;
+        _umsContext.Users.AddAsync(user);
         _umsContext.SaveChanges();
         return _umsContext.Users.Select(x => x).ToList();
     }

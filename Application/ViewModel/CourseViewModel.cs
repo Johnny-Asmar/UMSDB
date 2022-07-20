@@ -6,5 +6,6 @@ public class CourseViewModel
 {
     public string Name { get; set; }
     public int MaxStudentsNumber { get; set; }
-    public NpgsqlRange<DateOnly>? EnrolmentDateRange { get; set; }
+    public DateOnly startTime { get; set; }
+    public DateOnly endTime { get; set; }
 }

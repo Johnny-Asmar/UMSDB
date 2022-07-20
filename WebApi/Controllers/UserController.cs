@@ -1,3 +1,4 @@
+using System.Reflection;
 using Domain.Models;
 using MediatR;
 
@@ -18,11 +19,11 @@ public class UserController : ODataController
 {
     
     private readonly IMediator _mediator;
-
-    public UserController(IMediator mediator)
+    private readonly ILogger<UserController> _logger;
+    public UserController(IMediator mediator, ILogger<UserController> logger)
     {
         _mediator = mediator;
-        
+        _logger = logger;
     }
     
     
@@ -30,7 +31,7 @@ public class UserController : ODataController
     [HttpGet("all")]
     public async Task<List<User>> GetAll()
     {
-        
+       
         return await _mediator.Send(new GetAllUsersQuery());
 
     }
@@ -45,14 +46,10 @@ public class UserController : ODataController
 
     }
     [HttpPost()]
-    public async Task<List<User>> AddUser([FromBody]User user)
+    public async Task<IActionResult> AddUser([FromBody]AddUserCommand addUserCommand)
     {
-        return await _mediator.Send(new AddUserCommand
-        {
-            user = user
-        });
-
-
+        var users = await _mediator.Send(addUserCommand);
+        return Ok(users);
     }
     
     [HttpDelete("DeleteStudent/{id:int}")]

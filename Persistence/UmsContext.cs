@@ -149,6 +149,7 @@ namespace Persistence
 
                 entity.HasIndex(e => e.KeycloakId, "users_\"keycloackid\"_uindex")
                     .IsUnique();
+                entity.HasIndex(e => e.SubsribeToEmail, "users_\"subsribetoemail\"_uindex"); // added
 
                 entity.Property(e => e.Id).HasDefaultValueSql("nextval('\"Users_id_seq\"'::regclass)");
 
@@ -161,6 +162,7 @@ namespace Persistence
                     .HasForeignKey(d => d.RoleId)
                     .OnDelete(DeleteBehavior.Restrict)
                     .HasConstraintName("users_role_id_fk");
+
             });
 
             OnModelCreatingPartial(modelBuilder);
