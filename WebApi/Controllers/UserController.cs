@@ -78,11 +78,14 @@ public class UserController : ODataController
 
 
     }
-    [HttpGet("allStudentsOfACourse")]
-    public async Task<List<UserViewModel>> GetAllStudentsOfACourseQuery()
+    [HttpGet("allStudentsOfACourse/{courseId:int}")]
+    public async Task<List<UserViewModel>> GetAllStudentsOfACourse([FromRoute]int courseId)
     {
        
-        return await _mediator.Send(new GetAllStudentsOfACourseQuery());
+        return await _mediator.Send(new GetAllStudentsOfACourseQuery
+        {
+            courseId = courseId
+        });
 
     }
 }
