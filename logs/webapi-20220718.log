@@ -1,0 +1,462 @@
+[2022-07-18 10:16:16.896 +03:00  INF]  User profile is available. Using 'C:\Users\Johnn\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[2022-07-18 10:16:17.076 +03:00  INF]  Now listening on: https://localhost:7128
+[2022-07-18 10:16:17.076 +03:00  INF]  Now listening on: http://localhost:5128
+[2022-07-18 10:16:17.079 +03:00  INF]  Application started. Press Ctrl+C to shut down.
+[2022-07-18 10:16:17.080 +03:00  INF]  Hosting environment: Development
+[2022-07-18 10:16:17.080 +03:00  INF]  Content root path: C:\Users\Johnn\RiderProjects\WebApplicationArchitecture\WebApi\
+[2022-07-18 10:16:17.757 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7128/swagger - -
+[2022-07-18 10:16:17.864 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7128/swagger - - - 301 0 - 108.9720ms
+[2022-07-18 10:16:17.870 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7128/swagger/index.html - -
+[2022-07-18 10:16:17.925 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7128/swagger/index.html - - - 200 - text/html;charset=utf-8 55.2972ms
+[2022-07-18 10:16:17.941 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7128/swagger/swagger-ui.css - -
+[2022-07-18 10:16:17.941 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7128/swagger/swagger-ui-standalone-preset.js - -
+[2022-07-18 10:16:17.941 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7128/swagger/swagger-ui-bundle.js - -
+[2022-07-18 10:16:17.964 +03:00  INF]  Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+[2022-07-18 10:16:17.964 +03:00  INF]  Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+[2022-07-18 10:16:17.971 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7128/swagger/swagger-ui.css - - - 200 143632 text/css 30.3083ms
+[2022-07-18 10:16:17.971 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7128/swagger/swagger-ui-standalone-preset.js - - - 200 337162 application/javascript 30.2984ms
+[2022-07-18 10:16:17.987 +03:00  INF]  Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+[2022-07-18 10:16:17.989 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7128/swagger/swagger-ui-bundle.js - - - 200 1092889 application/javascript 48.5835ms
+[2022-07-18 10:16:18.167 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7128/swagger/v1/swagger.json - -
+[2022-07-18 10:16:18.322 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7128/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 154.6033ms
+[2022-07-18 10:16:32.527 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7128/api/User/all - -
+[2022-07-18 10:16:32.531 +03:00  INF]  Executing endpoint 'WebApi.Controllers.UserController.GetAll (WebApi)'
+[2022-07-18 10:16:32.559 +03:00  INF]  Route matched with {action = "GetAll", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Collections.Generic.List`1[Domain.Models.User]] GetAll() on controller WebApi.Controllers.UserController (WebApi).
+[2022-07-18 10:16:32.567 +03:00  INF]  Executed action WebApi.Controllers.UserController.GetAll (WebApi) in 2.5821ms
+[2022-07-18 10:16:32.569 +03:00  INF]  Executed endpoint 'WebApi.Controllers.UserController.GetAll (WebApi)'
+[2022-07-18 10:16:32.573 +03:00  ERR]  An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Unable to resolve service for type 'Microsoft.Extensions.Logging.ILogger' while attempting to activate 'WebApi.Controllers.UserController'.
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.GetService(IServiceProvider sp, Type type, Type requiredBy, Boolean isDefaultParameterRequired)
+   at lambda_method9(Closure , IServiceProvider , Object[] )
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerActivatorProvider.<>c__DisplayClass7_0.<CreateActivator>b__0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass6_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+[2022-07-18 10:16:32.591 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7128/api/User/all - - - 500 - text/plain;+charset=utf-8 64.0408ms
+[2022-07-18 10:20:49.185 +03:00  INF]  Application is shutting down...
+[2022-07-18 10:21:10.542 +03:00  INF]  User profile is available. Using 'C:\Users\Johnn\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[2022-07-18 10:21:10.714 +03:00  INF]  Now listening on: https://localhost:7128
+[2022-07-18 10:21:10.715 +03:00  INF]  Now listening on: http://localhost:5128
+[2022-07-18 10:21:10.718 +03:00  INF]  Application started. Press Ctrl+C to shut down.
+[2022-07-18 10:21:10.718 +03:00  INF]  Hosting environment: Development
+[2022-07-18 10:21:10.718 +03:00  INF]  Content root path: C:\Users\Johnn\RiderProjects\WebApplicationArchitecture\WebApi\
+[2022-07-18 10:21:11.232 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7128/swagger - -
+[2022-07-18 10:21:11.301 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7128/swagger - - - 301 0 - 73.2838ms
+[2022-07-18 10:21:11.306 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7128/swagger/index.html - -
+[2022-07-18 10:21:11.357 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7128/swagger/index.html - - - 200 - text/html;charset=utf-8 50.7086ms
+[2022-07-18 10:21:11.378 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7128/swagger/swagger-ui.css - -
+[2022-07-18 10:21:11.379 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7128/swagger/swagger-ui-bundle.js - -
+[2022-07-18 10:21:11.382 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7128/swagger/swagger-ui-standalone-preset.js - -
+[2022-07-18 10:21:11.399 +03:00  INF]  Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+[2022-07-18 10:21:11.399 +03:00  INF]  Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+[2022-07-18 10:21:11.399 +03:00  INF]  Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+[2022-07-18 10:21:11.400 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7128/swagger/swagger-ui-bundle.js - - - 200 1092889 application/javascript 21.2589ms
+[2022-07-18 10:21:11.400 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7128/swagger/swagger-ui-standalone-preset.js - - - 200 337162 application/javascript 17.5206ms
+[2022-07-18 10:21:11.400 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7128/swagger/swagger-ui.css - - - 200 143632 text/css 21.5798ms
+[2022-07-18 10:21:11.592 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7128/swagger/v1/swagger.json - -
+[2022-07-18 10:21:11.740 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7128/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 147.6617ms
+[2022-07-18 10:21:36.303 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7128/api/User/all - -
+[2022-07-18 10:21:36.307 +03:00  INF]  Executing endpoint 'WebApi.Controllers.UserController.GetAll (WebApi)'
+[2022-07-18 10:21:36.332 +03:00  INF]  Route matched with {action = "GetAll", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Collections.Generic.List`1[Domain.Models.User]] GetAll() on controller WebApi.Controllers.UserController (WebApi).
+[2022-07-18 10:21:36.338 +03:00  INF]  Executed action WebApi.Controllers.UserController.GetAll (WebApi) in 1.364ms
+[2022-07-18 10:21:36.340 +03:00  INF]  Executed endpoint 'WebApi.Controllers.UserController.GetAll (WebApi)'
+[2022-07-18 10:21:36.344 +03:00  ERR]  An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Unable to resolve service for type 'Microsoft.Extensions.Logging.ILogger' while attempting to activate 'WebApi.Controllers.UserController'.
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.GetService(IServiceProvider sp, Type type, Type requiredBy, Boolean isDefaultParameterRequired)
+   at lambda_method9(Closure , IServiceProvider , Object[] )
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerActivatorProvider.<>c__DisplayClass7_0.<CreateActivator>b__0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass6_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+[2022-07-18 10:21:36.360 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7128/api/User/all - - - 500 - text/plain;+charset=utf-8 56.4353ms
+[2022-07-18 10:22:14.200 +03:00  INF]  Application is shutting down...
+[2022-07-18 10:25:14.968 +03:00  INF]  User profile is available. Using 'C:\Users\Johnn\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[2022-07-18 10:25:15.125 +03:00  INF]  Now listening on: https://localhost:7128
+[2022-07-18 10:25:15.126 +03:00  INF]  Now listening on: http://localhost:5128
+[2022-07-18 10:25:15.129 +03:00  INF]  Application started. Press Ctrl+C to shut down.
+[2022-07-18 10:25:15.129 +03:00  INF]  Hosting environment: Development
+[2022-07-18 10:25:15.129 +03:00  INF]  Content root path: C:\Users\Johnn\RiderProjects\WebApplicationArchitecture\WebApi\
+[2022-07-18 10:25:15.318 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7128/swagger - -
+[2022-07-18 10:25:15.403 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7128/swagger - - - 301 0 - 87.9551ms
+[2022-07-18 10:25:15.406 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7128/swagger/index.html - -
+[2022-07-18 10:25:15.459 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7128/swagger/index.html - - - 200 - text/html;charset=utf-8 52.9287ms
+[2022-07-18 10:25:15.491 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7128/swagger/swagger-ui.css - -
+[2022-07-18 10:25:15.491 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7128/swagger/swagger-ui-bundle.js - -
+[2022-07-18 10:25:15.492 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7128/swagger/swagger-ui-standalone-preset.js - -
+[2022-07-18 10:25:15.512 +03:00  INF]  Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+[2022-07-18 10:25:15.512 +03:00  INF]  Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+[2022-07-18 10:25:15.513 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7128/swagger/swagger-ui-standalone-preset.js - - - 200 337162 application/javascript 21.5957ms
+[2022-07-18 10:25:15.513 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7128/swagger/swagger-ui.css - - - 200 143632 text/css 21.9701ms
+[2022-07-18 10:25:15.515 +03:00  INF]  Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+[2022-07-18 10:25:15.515 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7128/swagger/swagger-ui-bundle.js - - - 200 1092889 application/javascript 23.9376ms
+[2022-07-18 10:25:15.743 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7128/swagger/v1/swagger.json - -
+[2022-07-18 10:25:15.914 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7128/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 171.5419ms
+[2022-07-18 10:25:20.151 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7128/api/User/all - -
+[2022-07-18 10:25:20.155 +03:00  INF]  Executing endpoint 'WebApi.Controllers.UserController.GetAll (WebApi)'
+[2022-07-18 10:25:20.186 +03:00  INF]  Route matched with {action = "GetAll", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Collections.Generic.List`1[Domain.Models.User]] GetAll() on controller WebApi.Controllers.UserController (WebApi).
+[2022-07-18 10:25:20.193 +03:00  INF]  Executed action WebApi.Controllers.UserController.GetAll (WebApi) in 1.4655ms
+[2022-07-18 10:25:20.195 +03:00  INF]  Executed endpoint 'WebApi.Controllers.UserController.GetAll (WebApi)'
+[2022-07-18 10:25:20.201 +03:00  ERR]  An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Unable to resolve service for type 'Microsoft.Extensions.Logging.ILogger' while attempting to activate 'WebApi.Controllers.UserController'.
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.GetService(IServiceProvider sp, Type type, Type requiredBy, Boolean isDefaultParameterRequired)
+   at lambda_method9(Closure , IServiceProvider , Object[] )
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerActivatorProvider.<>c__DisplayClass7_0.<CreateActivator>b__0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass6_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+[2022-07-18 10:25:20.220 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7128/api/User/all - - - 500 - text/plain;+charset=utf-8 68.9356ms
+[2022-07-18 10:25:44.689 +03:00  INF]  Application is shutting down...
+[2022-07-18 10:25:50.896 +03:00  INF]  User profile is available. Using 'C:\Users\Johnn\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[2022-07-18 10:25:51.048 +03:00  INF]  Now listening on: https://localhost:7128
+[2022-07-18 10:25:51.048 +03:00  INF]  Now listening on: http://localhost:5128
+[2022-07-18 10:25:51.051 +03:00  INF]  Application started. Press Ctrl+C to shut down.
+[2022-07-18 10:25:51.052 +03:00  INF]  Hosting environment: Development
+[2022-07-18 10:25:51.052 +03:00  INF]  Content root path: C:\Users\Johnn\RiderProjects\WebApplicationArchitecture\WebApi\
+[2022-07-18 10:25:51.224 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7128/swagger - -
+[2022-07-18 10:25:51.288 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7128/swagger - - - 301 0 - 66.4825ms
+[2022-07-18 10:25:51.294 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7128/swagger/index.html - -
+[2022-07-18 10:25:51.342 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7128/swagger/index.html - - - 200 - text/html;charset=utf-8 48.1390ms
+[2022-07-18 10:25:51.358 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7128/swagger/swagger-ui.css - -
+[2022-07-18 10:25:51.359 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7128/swagger/swagger-ui-bundle.js - -
+[2022-07-18 10:25:51.359 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7128/swagger/swagger-ui-standalone-preset.js - -
+[2022-07-18 10:25:51.376 +03:00  INF]  Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+[2022-07-18 10:25:51.376 +03:00  INF]  Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+[2022-07-18 10:25:51.380 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7128/swagger/swagger-ui-standalone-preset.js - - - 200 337162 application/javascript 21.2296ms
+[2022-07-18 10:25:51.380 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7128/swagger/swagger-ui.css - - - 200 143632 text/css 21.7561ms
+[2022-07-18 10:25:51.391 +03:00  INF]  Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+[2022-07-18 10:25:51.395 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7128/swagger/swagger-ui-bundle.js - - - 200 1092889 application/javascript 36.2704ms
+[2022-07-18 10:25:51.555 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7128/swagger/v1/swagger.json - -
+[2022-07-18 10:25:51.719 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7128/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 164.2243ms
+[2022-07-18 10:25:55.559 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7128/api/User/all - -
+[2022-07-18 10:25:55.563 +03:00  INF]  Executing endpoint 'WebApi.Controllers.UserController.GetAll (WebApi)'
+[2022-07-18 10:25:55.593 +03:00  INF]  Route matched with {action = "GetAll", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Collections.Generic.List`1[Domain.Models.User]] GetAll() on controller WebApi.Controllers.UserController (WebApi).
+[2022-07-18 10:25:55.602 +03:00  INF]  Executed action WebApi.Controllers.UserController.GetAll (WebApi) in 1.3573ms
+[2022-07-18 10:25:55.603 +03:00  INF]  Executed endpoint 'WebApi.Controllers.UserController.GetAll (WebApi)'
+[2022-07-18 10:25:55.607 +03:00  ERR]  An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Unable to resolve service for type 'Microsoft.Extensions.Logging.ILogger' while attempting to activate 'WebApi.Controllers.UserController'.
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.GetService(IServiceProvider sp, Type type, Type requiredBy, Boolean isDefaultParameterRequired)
+   at lambda_method9(Closure , IServiceProvider , Object[] )
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerActivatorProvider.<>c__DisplayClass7_0.<CreateActivator>b__0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass6_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+[2022-07-18 10:25:55.623 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7128/api/User/all - - - 500 - text/plain;+charset=utf-8 63.7273ms
+[2022-07-18 10:27:32.712 +03:00  INF]  Application is shutting down...
+[2022-07-18 10:43:10.642 +03:00  INF]  User profile is available. Using 'C:\Users\Johnn\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[2022-07-18 10:43:10.792 +03:00  INF]  Now listening on: https://localhost:7128
+[2022-07-18 10:43:10.792 +03:00  INF]  Now listening on: http://localhost:5128
+[2022-07-18 10:43:10.795 +03:00  INF]  Application started. Press Ctrl+C to shut down.
+[2022-07-18 10:43:10.796 +03:00  INF]  Hosting environment: Development
+[2022-07-18 10:43:10.796 +03:00  INF]  Content root path: C:\Users\Johnn\RiderProjects\WebApplicationArchitecture\WebApi\
+[2022-07-18 10:43:11.382 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7128/swagger - -
+[2022-07-18 10:43:11.446 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7128/swagger - - - 301 0 - 67.0420ms
+[2022-07-18 10:43:11.452 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7128/swagger/index.html - -
+[2022-07-18 10:43:11.502 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7128/swagger/index.html - - - 200 - text/html;charset=utf-8 50.6290ms
+[2022-07-18 10:43:11.519 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7128/swagger/swagger-ui.css - -
+[2022-07-18 10:43:11.519 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7128/swagger/swagger-ui-bundle.js - -
+[2022-07-18 10:43:11.519 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7128/swagger/swagger-ui-standalone-preset.js - -
+[2022-07-18 10:43:11.536 +03:00  INF]  Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+[2022-07-18 10:43:11.537 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7128/swagger/swagger-ui.css - - - 200 143632 text/css 18.3587ms
+[2022-07-18 10:43:11.547 +03:00  INF]  Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+[2022-07-18 10:43:11.547 +03:00  INF]  Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+[2022-07-18 10:43:11.550 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7128/swagger/swagger-ui-standalone-preset.js - - - 200 337162 application/javascript 30.6021ms
+[2022-07-18 10:43:11.550 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7128/swagger/swagger-ui-bundle.js - - - 200 1092889 application/javascript 30.6966ms
+[2022-07-18 10:43:11.756 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7128/swagger/v1/swagger.json - -
+[2022-07-18 10:43:11.912 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7128/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 155.3549ms
+[2022-07-18 10:43:25.364 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7128/api/User/2 - -
+[2022-07-18 10:43:25.368 +03:00  INF]  Executing endpoint 'WebApi.Controllers.UserController.GetUserById (WebApi)'
+[2022-07-18 10:43:25.405 +03:00  INF]  Route matched with {action = "GetUserById", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Domain.Models.User] GetUserById(Int32) on controller WebApi.Controllers.UserController (WebApi).
+[2022-07-18 10:43:25.412 +03:00  INF]  Executed action WebApi.Controllers.UserController.GetUserById (WebApi) in 1.3114ms
+[2022-07-18 10:43:25.413 +03:00  INF]  Executed endpoint 'WebApi.Controllers.UserController.GetUserById (WebApi)'
+[2022-07-18 10:43:25.417 +03:00  ERR]  An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Unable to resolve service for type 'Microsoft.Extensions.Logging.ILogger' while attempting to activate 'WebApi.Controllers.UserController'.
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.GetService(IServiceProvider sp, Type type, Type requiredBy, Boolean isDefaultParameterRequired)
+   at lambda_method9(Closure , IServiceProvider , Object[] )
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerActivatorProvider.<>c__DisplayClass7_0.<CreateActivator>b__0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass6_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+[2022-07-18 10:43:25.433 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7128/api/User/2 - - - 500 - text/plain;+charset=utf-8 68.6170ms
+[2022-07-18 10:43:34.123 +03:00  INF]  Application is shutting down...
+[2022-07-18 10:44:00.732 +03:00  INF]  User profile is available. Using 'C:\Users\Johnn\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[2022-07-18 10:44:00.914 +03:00  INF]  Now listening on: https://localhost:7128
+[2022-07-18 10:44:00.914 +03:00  INF]  Now listening on: http://localhost:5128
+[2022-07-18 10:44:00.917 +03:00  INF]  Application started. Press Ctrl+C to shut down.
+[2022-07-18 10:44:00.918 +03:00  INF]  Hosting environment: Development
+[2022-07-18 10:44:00.918 +03:00  INF]  Content root path: C:\Users\Johnn\RiderProjects\WebApplicationArchitecture\WebApi\
+[2022-07-18 10:44:01.236 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7128/swagger - -
+[2022-07-18 10:44:01.298 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7128/swagger - - - 301 0 - 65.8485ms
+[2022-07-18 10:44:01.306 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7128/swagger/index.html - -
+[2022-07-18 10:44:01.356 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7128/swagger/index.html - - - 200 - text/html;charset=utf-8 50.5080ms
+[2022-07-18 10:44:01.380 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7128/swagger/swagger-ui.css - -
+[2022-07-18 10:44:01.380 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7128/swagger/swagger-ui-bundle.js - -
+[2022-07-18 10:44:01.381 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7128/swagger/swagger-ui-standalone-preset.js - -
+[2022-07-18 10:44:01.397 +03:00  INF]  Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+[2022-07-18 10:44:01.397 +03:00  INF]  Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+[2022-07-18 10:44:01.397 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7128/swagger/swagger-ui.css - - - 200 143632 text/css 16.8337ms
+[2022-07-18 10:44:01.397 +03:00  INF]  Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+[2022-07-18 10:44:01.397 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7128/swagger/swagger-ui-standalone-preset.js - - - 200 337162 application/javascript 16.5074ms
+[2022-07-18 10:44:01.397 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7128/swagger/swagger-ui-bundle.js - - - 200 1092889 application/javascript 16.7760ms
+[2022-07-18 10:44:01.564 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7128/swagger/v1/swagger.json - -
+[2022-07-18 10:44:01.712 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7128/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 147.6305ms
+[2022-07-18 10:44:05.188 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7128/api/User/all - -
+[2022-07-18 10:44:05.192 +03:00  INF]  Executing endpoint 'WebApi.Controllers.UserController.GetAll (WebApi)'
+[2022-07-18 10:44:05.215 +03:00  INF]  Route matched with {action = "GetAll", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Collections.Generic.List`1[Domain.Models.User]] GetAll() on controller WebApi.Controllers.UserController (WebApi).
+[2022-07-18 10:44:07.358 +03:00  INF]  Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[Domain.Models.User, Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[2022-07-18 10:44:07.370 +03:00  INF]  Executed action WebApi.Controllers.UserController.GetAll (WebApi) in 2148.4338ms
+[2022-07-18 10:44:07.371 +03:00  INF]  Executed endpoint 'WebApi.Controllers.UserController.GetAll (WebApi)'
+[2022-07-18 10:44:07.380 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7128/api/User/all - - - 200 - application/json;+charset=utf-8 2192.5216ms
+[2022-07-18 10:44:13.539 +03:00  INF]  Application is shutting down...
+2022-07-18 10:53:59.006 +03:00 [INF] User profile is available. Using 'C:\Users\Johnn\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-07-18 10:53:59.167 +03:00 [INF] Now listening on: https://localhost:7128
+2022-07-18 10:53:59.168 +03:00 [INF] Now listening on: http://localhost:5128
+2022-07-18 10:53:59.171 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-07-18 10:53:59.171 +03:00 [INF] Hosting environment: Development
+2022-07-18 10:53:59.171 +03:00 [INF] Content root path: C:\Users\Johnn\RiderProjects\WebApplicationArchitecture\WebApi\
+2022-07-18 10:53:59.870 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7128/swagger - -
+2022-07-18 10:53:59.950 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7128/swagger - - - 301 0 - 83.7810ms
+2022-07-18 10:53:59.955 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7128/swagger/index.html - -
+2022-07-18 10:54:00.013 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7128/swagger/index.html - - - 200 - text/html;charset=utf-8 57.8530ms
+2022-07-18 10:54:00.032 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7128/swagger/swagger-ui.css - -
+2022-07-18 10:54:00.032 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7128/swagger/swagger-ui-bundle.js - -
+2022-07-18 10:54:00.032 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7128/swagger/swagger-ui-standalone-preset.js - -
+2022-07-18 10:54:00.050 +03:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2022-07-18 10:54:00.050 +03:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2022-07-18 10:54:00.051 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7128/swagger/swagger-ui.css - - - 200 143632 text/css 19.5971ms
+2022-07-18 10:54:00.051 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7128/swagger/swagger-ui-standalone-preset.js - - - 200 337162 application/javascript 19.3206ms
+2022-07-18 10:54:00.053 +03:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2022-07-18 10:54:00.053 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7128/swagger/swagger-ui-bundle.js - - - 200 1092889 application/javascript 20.7924ms
+2022-07-18 10:54:00.231 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7128/swagger/v1/swagger.json - -
+2022-07-18 10:54:00.382 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7128/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 151.1015ms
+2022-07-18 10:54:07.603 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7128/api/User/all - -
+2022-07-18 10:54:07.610 +03:00 [INF] Executing endpoint 'WebApi.Controllers.UserController.GetAll (WebApi)'
+2022-07-18 10:54:07.639 +03:00 [INF] Route matched with {action = "GetAll", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Collections.Generic.List`1[Domain.Models.User]] GetAll() on controller WebApi.Controllers.UserController (WebApi).
+2022-07-18 10:54:07.647 +03:00 [INF] Executed action WebApi.Controllers.UserController.GetAll (WebApi) in 2.0224ms
+2022-07-18 10:54:07.649 +03:00 [INF] Executed endpoint 'WebApi.Controllers.UserController.GetAll (WebApi)'
+2022-07-18 10:54:07.653 +03:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Unable to resolve service for type 'Microsoft.Extensions.Logging.ILogger' while attempting to activate 'WebApi.Controllers.UserController'.
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.GetService(IServiceProvider sp, Type type, Type requiredBy, Boolean isDefaultParameterRequired)
+   at lambda_method9(Closure , IServiceProvider , Object[] )
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerActivatorProvider.<>c__DisplayClass7_0.<CreateActivator>b__0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass6_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2022-07-18 10:54:07.670 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7128/api/User/all - - - 500 - text/plain;+charset=utf-8 66.9391ms
+2022-07-18 10:54:33.188 +03:00 [INF] Application is shutting down...
+[2022-07-18 10:57:34.063 +03:00  INF]  User profile is available. Using 'C:\Users\Johnn\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[2022-07-18 10:57:34.224 +03:00  INF]  Now listening on: https://localhost:7128
+[2022-07-18 10:57:34.224 +03:00  INF]  Now listening on: http://localhost:5128
+[2022-07-18 10:57:34.227 +03:00  INF]  Application started. Press Ctrl+C to shut down.
+[2022-07-18 10:57:34.227 +03:00  INF]  Hosting environment: Development
+[2022-07-18 10:57:34.228 +03:00  INF]  Content root path: C:\Users\Johnn\RiderProjects\WebApplicationArchitecture\WebApi\
+[2022-07-18 10:57:34.418 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7128/swagger - -
+[2022-07-18 10:57:34.485 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7128/swagger - - - 301 0 - 70.1056ms
+[2022-07-18 10:57:34.490 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7128/swagger/index.html - -
+[2022-07-18 10:57:34.542 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7128/swagger/index.html - - - 200 - text/html;charset=utf-8 52.4087ms
+[2022-07-18 10:57:34.566 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7128/swagger/swagger-ui.css - -
+[2022-07-18 10:57:34.566 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7128/swagger/swagger-ui-bundle.js - -
+[2022-07-18 10:57:34.567 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7128/swagger/swagger-ui-standalone-preset.js - -
+[2022-07-18 10:57:34.583 +03:00  INF]  Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+[2022-07-18 10:57:34.583 +03:00  INF]  Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+[2022-07-18 10:57:34.585 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7128/swagger/swagger-ui-standalone-preset.js - - - 200 337162 application/javascript 18.7489ms
+[2022-07-18 10:57:34.585 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7128/swagger/swagger-ui.css - - - 200 143632 text/css 18.9986ms
+[2022-07-18 10:57:34.596 +03:00  INF]  Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+[2022-07-18 10:57:34.598 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7128/swagger/swagger-ui-bundle.js - - - 200 1092889 application/javascript 31.7482ms
+[2022-07-18 10:57:34.769 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7128/swagger/v1/swagger.json - -
+[2022-07-18 10:57:34.931 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7128/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 162.7385ms
+[2022-07-18 10:58:02.599 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7128/api/User/all - -
+[2022-07-18 10:58:02.604 +03:00  INF]  Executing endpoint 'WebApi.Controllers.UserController.GetAll (WebApi)'
+[2022-07-18 10:58:02.627 +03:00  INF]  Route matched with {action = "GetAll", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Collections.Generic.List`1[Domain.Models.User]] GetAll() on controller WebApi.Controllers.UserController (WebApi).
+[2022-07-18 10:58:02.634 +03:00  INF]  Executed action WebApi.Controllers.UserController.GetAll (WebApi) in 1.3195ms
+[2022-07-18 10:58:02.636 +03:00  INF]  Executed endpoint 'WebApi.Controllers.UserController.GetAll (WebApi)'
+[2022-07-18 10:58:02.640 +03:00  ERR]  An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Unable to resolve service for type 'Microsoft.Extensions.Logging.ILogger' while attempting to activate 'WebApi.Controllers.UserController'.
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.GetService(IServiceProvider sp, Type type, Type requiredBy, Boolean isDefaultParameterRequired)
+   at lambda_method9(Closure , IServiceProvider , Object[] )
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerActivatorProvider.<>c__DisplayClass7_0.<CreateActivator>b__0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass6_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+[2022-07-18 10:58:02.656 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7128/api/User/all - - - 500 - text/plain;+charset=utf-8 56.5584ms
+[2022-07-18 10:58:18.048 +03:00  INF]  Application is shutting down...
+[2022-07-18 11:17:32.171 +03:00  INF]  User profile is available. Using 'C:\Users\Johnn\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[2022-07-18 11:17:32.332 +03:00  INF]  Now listening on: https://localhost:7128
+[2022-07-18 11:17:32.332 +03:00  INF]  Now listening on: http://localhost:5128
+[2022-07-18 11:17:32.336 +03:00  INF]  Application started. Press Ctrl+C to shut down.
+[2022-07-18 11:17:32.336 +03:00  INF]  Hosting environment: Development
+[2022-07-18 11:17:32.336 +03:00  INF]  Content root path: C:\Users\Johnn\RiderProjects\WebApplicationArchitecture\WebApi\
+[2022-07-18 11:17:32.794 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7128/swagger - -
+[2022-07-18 11:17:32.859 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7128/swagger - - - 301 0 - 68.0055ms
+[2022-07-18 11:17:32.867 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7128/swagger/index.html - -
+[2022-07-18 11:17:32.925 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7128/swagger/index.html - - - 200 - text/html;charset=utf-8 58.7533ms
+[2022-07-18 11:17:32.944 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7128/swagger/swagger-ui.css - -
+[2022-07-18 11:17:32.944 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7128/swagger/swagger-ui-bundle.js - -
+[2022-07-18 11:17:32.944 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7128/swagger/swagger-ui-standalone-preset.js - -
+[2022-07-18 11:17:32.969 +03:00  INF]  Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+[2022-07-18 11:17:32.969 +03:00  INF]  Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+[2022-07-18 11:17:32.969 +03:00  INF]  Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+[2022-07-18 11:17:32.969 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7128/swagger/swagger-ui.css - - - 200 143632 text/css 25.4645ms
+[2022-07-18 11:17:32.969 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7128/swagger/swagger-ui-bundle.js - - - 200 1092889 application/javascript 25.4433ms
+[2022-07-18 11:17:32.969 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7128/swagger/swagger-ui-standalone-preset.js - - - 200 337162 application/javascript 25.3749ms
+[2022-07-18 11:17:33.167 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7128/swagger/v1/swagger.json - -
+[2022-07-18 11:17:33.343 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7128/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 176.4200ms
+[2022-07-18 11:17:37.329 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7128/api/User/all - -
+[2022-07-18 11:17:37.335 +03:00  INF]  Executing endpoint 'WebApi.Controllers.UserController.GetAll (WebApi)'
+[2022-07-18 11:17:37.358 +03:00  INF]  Route matched with {action = "GetAll", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Collections.Generic.List`1[Domain.Models.User]] GetAll() on controller WebApi.Controllers.UserController (WebApi).
+[2022-07-18 11:17:37.477 +03:00  INF]  Weather Forecast executing...
+[2022-07-18 11:17:39.402 +03:00  INF]  Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[Domain.Models.User, Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[2022-07-18 11:17:39.413 +03:00  INF]  Executed action WebApi.Controllers.UserController.GetAll (WebApi) in 2048.6734ms
+[2022-07-18 11:17:39.414 +03:00  INF]  Executed endpoint 'WebApi.Controllers.UserController.GetAll (WebApi)'
+[2022-07-18 11:17:39.423 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7128/api/User/all - - - 200 - application/json;+charset=utf-8 2093.5829ms
+[2022-07-18 11:17:51.077 +03:00  INF]  Application is shutting down...
+[2022-07-18 11:18:03.768 +03:00  INF]  User profile is available. Using 'C:\Users\Johnn\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[2022-07-18 11:18:03.923 +03:00  INF]  Now listening on: https://localhost:7128
+[2022-07-18 11:18:03.923 +03:00  INF]  Now listening on: http://localhost:5128
+[2022-07-18 11:18:03.927 +03:00  INF]  Application started. Press Ctrl+C to shut down.
+[2022-07-18 11:18:03.928 +03:00  INF]  Hosting environment: Development
+[2022-07-18 11:18:03.928 +03:00  INF]  Content root path: C:\Users\Johnn\RiderProjects\WebApplicationArchitecture\WebApi\
+[2022-07-18 11:18:04.202 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7128/swagger - -
+[2022-07-18 11:18:04.272 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7128/swagger - - - 301 0 - 73.1121ms
+[2022-07-18 11:18:04.276 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7128/swagger/index.html - -
+[2022-07-18 11:18:04.326 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7128/swagger/index.html - - - 200 - text/html;charset=utf-8 50.0227ms
+[2022-07-18 11:18:04.344 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7128/swagger/swagger-ui.css - -
+[2022-07-18 11:18:04.344 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7128/swagger/swagger-ui-bundle.js - -
+[2022-07-18 11:18:04.344 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7128/swagger/swagger-ui-standalone-preset.js - -
+[2022-07-18 11:18:04.360 +03:00  INF]  Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+[2022-07-18 11:18:04.360 +03:00  INF]  Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+[2022-07-18 11:18:04.360 +03:00  INF]  Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+[2022-07-18 11:18:04.360 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7128/swagger/swagger-ui.css - - - 200 143632 text/css 16.5087ms
+[2022-07-18 11:18:04.360 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7128/swagger/swagger-ui-standalone-preset.js - - - 200 337162 application/javascript 16.3070ms
+[2022-07-18 11:18:04.360 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7128/swagger/swagger-ui-bundle.js - - - 200 1092889 application/javascript 16.3828ms
+[2022-07-18 11:18:04.557 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7128/swagger/v1/swagger.json - -
+[2022-07-18 11:18:04.723 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7128/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 165.1478ms
+[2022-07-18 11:18:36.821 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7128/api/User/all - -
+[2022-07-18 11:18:36.826 +03:00  INF]  Executing endpoint 'WebApi.Controllers.UserController.GetAll (WebApi)'
+[2022-07-18 11:18:36.852 +03:00  INF]  Route matched with {action = "GetAll", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Collections.Generic.List`1[Domain.Models.User]] GetAll() on controller WebApi.Controllers.UserController (WebApi).
+[2022-07-18 11:18:36.971 +03:00  INF]  Weather Forecast executing...
+[2022-07-18 11:18:38.759 +03:00  INF]  Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[Domain.Models.User, Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[2022-07-18 11:18:38.772 +03:00  INF]  Executed action WebApi.Controllers.UserController.GetAll (WebApi) in 1914.4414ms
+[2022-07-18 11:18:38.773 +03:00  INF]  Executed endpoint 'WebApi.Controllers.UserController.GetAll (WebApi)'
+[2022-07-18 11:18:38.784 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7128/api/User/all - - - 200 - application/json;+charset=utf-8 1962.6885ms
+[2022-07-18 11:26:07.012 +03:00  INF]  Application is shutting down...
+[2022-07-18 11:26:14.181 +03:00  INF]  User profile is available. Using 'C:\Users\Johnn\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[2022-07-18 11:26:14.351 +03:00  INF]  Now listening on: https://localhost:7128
+[2022-07-18 11:26:14.351 +03:00  INF]  Now listening on: http://localhost:5128
+[2022-07-18 11:26:14.354 +03:00  INF]  Application started. Press Ctrl+C to shut down.
+[2022-07-18 11:26:14.355 +03:00  INF]  Hosting environment: Development
+[2022-07-18 11:26:14.355 +03:00  INF]  Content root path: C:\Users\Johnn\RiderProjects\WebApplicationArchitecture\WebApi\
+[2022-07-18 11:26:14.874 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7128/swagger - -
+[2022-07-18 11:26:14.944 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7128/swagger - - - 301 0 - 74.6845ms
+[2022-07-18 11:26:14.949 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7128/swagger/index.html - -
+[2022-07-18 11:26:15.005 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7128/swagger/index.html - - - 200 - text/html;charset=utf-8 55.8593ms
+[2022-07-18 11:26:15.029 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7128/swagger/swagger-ui.css - -
+[2022-07-18 11:26:15.029 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7128/swagger/swagger-ui-bundle.js - -
+[2022-07-18 11:26:15.029 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7128/swagger/swagger-ui-standalone-preset.js - -
+[2022-07-18 11:26:15.050 +03:00  INF]  Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+[2022-07-18 11:26:15.050 +03:00  INF]  Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+[2022-07-18 11:26:15.050 +03:00  INF]  Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+[2022-07-18 11:26:15.051 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7128/swagger/swagger-ui-bundle.js - - - 200 1092889 application/javascript 22.0856ms
+[2022-07-18 11:26:15.051 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7128/swagger/swagger-ui-standalone-preset.js - - - 200 337162 application/javascript 22.0887ms
+[2022-07-18 11:26:15.051 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7128/swagger/swagger-ui.css - - - 200 143632 text/css 22.2617ms
+[2022-07-18 11:26:15.270 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7128/swagger/v1/swagger.json - -
+[2022-07-18 11:26:15.472 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7128/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 201.3617ms
+[2022-07-18 11:26:21.022 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7128/api/User/all - -
+[2022-07-18 11:26:21.027 +03:00  INF]  Executing endpoint 'WebApi.Controllers.UserController.GetAll (WebApi)'
+[2022-07-18 11:26:21.052 +03:00  INF]  Route matched with {action = "GetAll", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Collections.Generic.List`1[Domain.Models.User]] GetAll() on controller WebApi.Controllers.UserController (WebApi).
+[2022-07-18 11:26:21.174 +03:00  INF]  Weather Forecast executing...
+[2022-07-18 11:26:23.072 +03:00  INF]  Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[Domain.Models.User, Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[2022-07-18 11:26:23.085 +03:00  INF]  Executed action WebApi.Controllers.UserController.GetAll (WebApi) in 2024.7762ms
+[2022-07-18 11:26:23.086 +03:00  INF]  Executed endpoint 'WebApi.Controllers.UserController.GetAll (WebApi)'
+[2022-07-18 11:26:23.096 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7128/api/User/all - - - 200 - application/json;+charset=utf-8 2073.3491ms
+[2022-07-18 11:26:32.478 +03:00  INF]  Application is shutting down...

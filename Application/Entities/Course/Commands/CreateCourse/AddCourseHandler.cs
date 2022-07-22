@@ -4,6 +4,8 @@ using CommonFunctions.Interfaces;
 using MediatR;
 using Microsoft.Extensions.Logging;
 using NpgsqlTypes;
+using PCP.Application.EmailObservablePattern.Classes;
+using PCP.Application.EmailObservablePattern.Interfaces;
 using PCP.Application.Exceptions;
 using PCP.Application.ViewModel;
 using Persistence;
@@ -14,14 +16,14 @@ public class AddCourseHandler : IRequestHandler<AddCourseCommand, CourseViewMode
 {
     public UmsContext _umsContext;
     private readonly IMapper _mapper;
-    private ISendEmail _sendEmail;
-    private readonly ILogger _logger;
+    private ISubject _subject;
+    private ILogger _logger;
     
-    public AddCourseHandler(UmsContext umsContext, IMapper mapper, ISendEmail sendEmail, ILogger<AddCourseHandler> logger)
+    public AddCourseHandler(UmsContext umsContext, IMapper mapper, ISubject subject, ILogger<AddCourseHandler> logger)
     {
         _umsContext = umsContext;
         _mapper = mapper;
-        _sendEmail = sendEmail;
+        _subject = subject;
         _logger = logger;
     }
 
@@ -60,12 +62,10 @@ public class AddCourseHandler : IRequestHandler<AddCourseCommand, CourseViewMode
         string message = "Please be aware that course " + course.Name + " is added to the courses list.";
 
         //inform students of the course
-        List<Domain.Models.User> users = _umsContext.Users.Select(x => x).ToList();
-        foreach (var user in users)
-        {
-            _logger.LogInformation(message);
-            _sendEmail.sendEmailToStudent(user.Email, message);
-        }
+       
+        _logger.LogInformation(message);
+        _subject.RefreshObservers(); //Filtering observers subscribed to Email
+        _subject.notifyObservers(message);
         
         return courseViewModel;
     }
