@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.OData.Routing.Controllers;
 using PCP.Application.Entities.User.Commands.AddUser;
 using PCP.Application.Entities.User.Commands.DeleteUser;
 using PCP.Application.Entities.User.Commands.UpdateUser;
+using PCP.Application.Entities.User.Queries.GetAllStudentOfACourse;
 using PCP.Application.Entities.User.Queries.GetAllUsers;
 using PCP.Application.Entities.User.Queries.GetUserById;
 using PCP.Application.ViewModel;
@@ -72,7 +73,16 @@ public class UserController : ODataController
             name = name
             
         });
+        
+        
 
+
+    }
+    [HttpGet("allStudentsOfACourse")]
+    public async Task<List<UserViewModel>> GetAllStudentsOfACourseQuery()
+    {
+       
+        return await _mediator.Send(new GetAllStudentsOfACourseQuery());
 
     }
 }
