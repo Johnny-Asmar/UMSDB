@@ -4,6 +4,8 @@ using CommonFunctions.Interfaces;
 using Domain.Models;
 using MediatR;
 using Microsoft.Extensions.Logging;
+using PCP.Application.EmailObservablePattern.Classes;
+using PCP.Application.EmailObservablePattern.Interfaces;
 using PCP.Application.Exceptions;
 using Persistence;
 
@@ -14,12 +16,14 @@ public class RegisterCourseHandler : IRequestHandler<RegisterCourseCommand, stri
     public UmsContext _umsContext;
     private readonly ILogger _logger;
     private ISendEmail _sendEmail;
+    private ISubject _subject;
 
-    public RegisterCourseHandler(UmsContext umsContext, ILogger<RegisterCourseHandler> logger, ISendEmail sendEmail)
+    public RegisterCourseHandler(UmsContext umsContext, ILogger<RegisterCourseHandler> logger, ISendEmail sendEmail, ISubject subject)
     {
         _umsContext = umsContext;
         _logger = logger;
         _sendEmail = sendEmail;
+        _subject = subject;
     }
 
     public async Task<string> Handle(RegisterCourseCommand request, CancellationToken cancellationToken)
@@ -61,8 +65,8 @@ public class RegisterCourseHandler : IRequestHandler<RegisterCourseCommand, stri
             //create a time slot
             
             SessionTime sessionTime = new SessionTime();
-            sessionTime.StartTime = request.startTime.Date.ToLocalTime();
-            sessionTime.EndTime = request.endTime.Date.ToLocalTime();
+            sessionTime.StartTime = request.startTime.Date;
+            sessionTime.EndTime = request.endTime.Date;
             _umsContext.SessionTimes.Add(sessionTime);
             _umsContext.SaveChanges();
 
@@ -81,13 +85,11 @@ public class RegisterCourseHandler : IRequestHandler<RegisterCourseCommand, stri
 
             string message = "Please be aware that a new class schedule have been added to the course " + course.Name;
             //inform students of the class
-            List<Domain.Models.User> users = _umsContext.Users.Select(x => x).ToList();
-            foreach (var user in users)
-            {
-                _logger.LogInformation(message);
-                _sendEmail.sendEmailToStudent(user.Email, message);
-            }
-
+            
+            _logger.LogInformation(message);
+            _subject.RefreshObservers(); //Filtering observers subscribed to Email
+            _subject.notifyObservers(message);
+            
             return "Added succesfuly";
         }
     }

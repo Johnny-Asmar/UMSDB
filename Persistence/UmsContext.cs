@@ -1,5 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿
 using Domain.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace Persistence
 {
@@ -27,11 +28,11 @@ namespace Persistence
             if (!optionsBuilder.IsConfigured)
             {
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-                optionsBuilder.UseNpgsql("Host=localhost;Port=5432;Database=ums;Username=postgres;Password=123456");
+                optionsBuilder.UseNpgsql("Host=localhost;Port=5432;Database=UMSWithMig;Username=postgres;Password=123456");
             }
         }
 
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        /*protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<ClassEnrollment>(entity =>
             {
@@ -149,7 +150,7 @@ namespace Persistence
 
                 entity.HasIndex(e => e.KeycloakId, "users_\"keycloackid\"_uindex")
                     .IsUnique();
-                entity.HasIndex(e => e.SubsribeToEmail, "users_\"subsribetoemail\"_uindex"); // added
+                entity.HasIndex(e => e.SubsribeToEmail, "users_\"subsribetoemail\"'::regclass"); // added
 
                 entity.Property(e => e.Id).HasDefaultValueSql("nextval('\"Users_id_seq\"'::regclass)");
 
@@ -168,6 +169,6 @@ namespace Persistence
             OnModelCreatingPartial(modelBuilder);
         }
 
-        partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
+        partial void OnModelCreatingPartial(ModelBuilder modelBuilder);*/
     }
 }

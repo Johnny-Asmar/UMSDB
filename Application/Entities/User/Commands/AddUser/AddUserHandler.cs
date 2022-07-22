@@ -1,18 +1,22 @@
+using AutoMapper;
 using MediatR;
+using PCP.Application.ViewModel;
 using Persistence;
 
 namespace PCP.Application.Entities.User.Commands.AddUser;
 
-public class AddUserHandler : IRequestHandler<AddUserCommand, List<Domain.Models.User>>
+public class AddUserHandler : IRequestHandler<AddUserCommand, UserViewModel>
 {
     public UmsContext _umsContext;
+    private IMapper _mapper;
     
-    public AddUserHandler(UmsContext umsContext)
+    public AddUserHandler(UmsContext umsContext, IMapper mapper)
     {
         _umsContext = umsContext;
+        _mapper = mapper;
     }
 
-    public async Task<List<Domain.Models.User>> Handle(AddUserCommand request, CancellationToken cancellationToken)
+    public async Task<UserViewModel> Handle(AddUserCommand request, CancellationToken cancellationToken)
     {
         Domain.Models.User user = new Domain.Models.User();
         user.Name = request.Name;
@@ -22,7 +26,9 @@ public class AddUserHandler : IRequestHandler<AddUserCommand, List<Domain.Models
         user.SubsribeToEmail = request.SubscribeToEmail;
         _umsContext.Users.AddAsync(user);
         _umsContext.SaveChanges();
-        return _umsContext.Users.Select(x => x).ToList();
+        
+        UserViewModel userViewModel = _mapper.Map<UserViewModel>(user);
+        return userViewModel;
     }
     
 }

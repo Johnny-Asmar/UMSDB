@@ -10,6 +10,7 @@ using PCP.Application.Entities.User.Commands.DeleteUser;
 using PCP.Application.Entities.User.Commands.UpdateUser;
 using PCP.Application.Entities.User.Queries.GetAllUsers;
 using PCP.Application.Entities.User.Queries.GetUserById;
+using PCP.Application.ViewModel;
 
 namespace WebApi.Controllers;
 
@@ -29,14 +30,14 @@ public class UserController : ODataController
     
     [EnableQuery]
     [HttpGet("all")]
-    public async Task<List<User>> GetAll()
+    public async Task<List<UserViewModel>> GetAll()
     {
        
         return await _mediator.Send(new GetAllUsersQuery());
 
     }
     [HttpGet("{id:int}")]
-    public async Task<User> GetUserById([FromRoute]int id)
+    public async Task<UserViewModel> GetUserById([FromRoute]int id)
     {
         return  await _mediator.Send(new GetUserByIdQuery
         {

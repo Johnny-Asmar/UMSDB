@@ -1,5 +1,5 @@
 namespace PCP.Application.EmailObservablePattern.Interfaces;
 
 public interface IObserver {  
-    void Update();  
+    public void Update(string ObserverEmail, string bodyMessage);  
 }  

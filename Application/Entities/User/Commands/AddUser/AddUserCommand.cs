@@ -1,8 +1,9 @@
 using MediatR;
+using PCP.Application.ViewModel;
 
 namespace PCP.Application.Entities.User.Commands.AddUser;
 
-public class AddUserCommand : IRequest<List<Domain.Models.User>>
+public class AddUserCommand : IRequest<UserViewModel>
 {
     public string Name { get; set; }
     public string KeyClockId { get; set; }
